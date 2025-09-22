@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#f8f9fa"/>
+  <rect x="150" y="100" width="100" height="80" fill="#28a745" opacity="0.1"/>
+  <rect x="150" y="100" width="100" height="80" fill="none" stroke="#28a745" stroke-width="2"/>
+  <text x="200" y="150" text-anchor="middle" fill="#28a745" font-size="20" font-family="Arial, sans-serif">Company</text>
+  <rect x="180" y="60" width="40" height="40" fill="#28a745" opacity="0.3" rx="5"/>
+  <text x="200" y="85" text-anchor="middle" fill="#28a745" font-size="14" font-family="Arial, sans-serif">Logo</text>
+</svg>

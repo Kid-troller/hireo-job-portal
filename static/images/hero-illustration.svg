@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <!-- Background Elements -->
+  <circle cx="250" cy="200" r="180" fill="#E3F2FD" opacity="0.3"/>
+  
+  <!-- Buildings/City Skyline -->
+  <rect x="100" y="200" width="60" height="150" rx="2" fill="#90CAF9"/>
+  <rect x="110" y="220" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  <rect x="130" y="220" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  <rect x="110" y="240" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  <rect x="130" y="240" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  <rect x="110" y="260" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  <rect x="130" y="260" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  
+  <rect x="170" y="150" width="80" height="200" rx="2" fill="#64B5F6"/>
+  <rect x="180" y="170" width="15" height="15" rx="1" fill="#E3F2FD"/>
+  <rect x="205" y="170" width="15" height="15" rx="1" fill="#E3F2FD"/>
+  <rect x="225" y="170" width="15" height="15" rx="1" fill="#E3F2FD"/>
+  <rect x="180" y="195" width="15" height="15" rx="1" fill="#E3F2FD"/>
+  <rect x="205" y="195" width="15" height="15" rx="1" fill="#E3F2FD"/>
+  <rect x="225" y="195" width="15" height="15" rx="1" fill="#E3F2FD"/>
+  <rect x="180" y="220" width="15" height="15" rx="1" fill="#E3F2FD"/>
+  <rect x="205" y="220" width="15" height="15" rx="1" fill="#E3F2FD"/>
+  <rect x="225" y="220" width="15" height="15" rx="1" fill="#E3F2FD"/>
+  
+  <rect x="260" y="180" width="70" height="170" rx="2" fill="#42A5F5"/>
+  <rect x="270" y="200" width="12" height="12" rx="1" fill="#E3F2FD"/>
+  <rect x="290" y="200" width="12" height="12" rx="1" fill="#E3F2FD"/>
+  <rect x="310" y="200" width="12" height="12" rx="1" fill="#E3F2FD"/>
+  <rect x="270" y="220" width="12" height="12" rx="1" fill="#E3F2FD"/>
+  <rect x="290" y="220" width="12" height="12" rx="1" fill="#E3F2FD"/>
+  <rect x="310" y="220" width="12" height="12" rx="1" fill="#E3F2FD"/>
+  <rect x="270" y="240" width="12" height="12" rx="1" fill="#E3F2FD"/>
+  <rect x="290" y="240" width="12" height="12" rx="1" fill="#E3F2FD"/>
+  <rect x="310" y="240" width="12" height="12" rx="1" fill="#E3F2FD"/>
+  
+  <rect x="340" y="220" width="50" height="130" rx="2" fill="#2196F3"/>
+  <rect x="350" y="240" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  <rect x="370" y="240" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  <rect x="350" y="260" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  <rect x="370" y="260" width="10" height="10" rx="1" fill="#E3F2FD"/>
+  
+  <!-- Person with Briefcase -->
+  <circle cx="420" cy="270" r="25" fill="#BBDEFB"/>
+  <rect x="400" y="295" width="40" height="55" rx="5" fill="#BBDEFB"/>
+  <rect x="390" y="305" width="15" height="40" rx="3" fill="#BBDEFB"/>
+  <rect x="435" y="305" width="15" height="40" rx="3" fill="#BBDEFB"/>
+  <rect x="410" y="350" width="10" height="20" rx="3" fill="#BBDEFB"/>
+  <rect x="425" y="350" width="10" height="20" rx="3" fill="#BBDEFB"/>
+  
+  <!-- Briefcase -->
+  <rect x="445" y="310" width="30" height="25" rx="3" fill="#1976D2"/>
+  <rect x="455" y="305" width="10" height="5" rx="1" fill="#1976D2"/>
+  
+  <!-- Job Search Elements -->
+  <circle cx="150" cy="100" r="30" fill="#2196F3" opacity="0.7"/>
+  <circle cx="350" cy="120" r="25" fill="#42A5F5" opacity="0.7"/>
+  <circle cx="250" cy="80" r="20" fill="#64B5F6" opacity="0.7"/>
+  
+  <!-- Connection Lines -->
+  <line x1="150" y1="100" x2="250" y2="80" stroke="#90CAF9" stroke-width="2" stroke-dasharray="5 5"/>
+  <line x1="250" y1="80" x2="350" y2="120" stroke="#90CAF9" stroke-width="2" stroke-dasharray="5 5"/>
+  <line x1="350" y1="120" x2="420" y2="270" stroke="#90CAF9" stroke-width="2" stroke-dasharray="5 5"/>
+  
+  <!-- Hireo Logo -->
+  <text x="250" y="50" text-anchor="middle" fill="#0d6efd" font-size="24" font-weight="bold" font-family="Arial, sans-serif">Hireo</text>
+</svg>

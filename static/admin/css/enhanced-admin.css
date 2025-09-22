@@ -1,0 +1,536 @@
+/* Enhanced Django Admin Styles for Hireo */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for consistent theming */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #64748b;
+    --accent-color: #f59e0b;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --info-color: #3b82f6;
+    --light-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --border-radius: 8px;
+    --transition: all 0.2s ease-in-out;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Enhanced Table Styles */
+.results table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-md) !important;
+    margin-bottom: 2rem !important;
+}
+
+.results thead th {
+    background: linear-gradient(135deg, var(--light-bg) 0%, #e2e8f0 100%) !important;
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    padding: 1rem !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    text-transform: uppercase !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em !important;
+}
+
+.results tbody td {
+    padding: 1rem !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    vertical-align: middle !important;
+    transition: var(--transition) !important;
+}
+
+.results tbody tr:hover td {
+    background: var(--light-bg) !important;
+}
+
+.results tbody tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Action Links */
+.results .action-checkbox-column {
+    width: 40px !important;
+    text-align: center !important;
+}
+
+.results .action-checkbox {
+    transform: scale(1.2) !important;
+    accent-color: var(--primary-color) !important;
+}
+
+/* Pagination */
+.paginator {
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 1rem !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border-color) !important;
+    margin: 1rem 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.paginator a, .paginator .this-page {
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.25rem !important;
+    border-radius: var(--border-radius) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: var(--transition) !important;
+}
+
+.paginator a {
+    color: var(--primary-color) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.paginator a:hover {
+    background: var(--primary-color) !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+}
+
+.paginator .this-page {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border: 1px solid var(--primary-color) !important;
+}
+
+/* Filters */
+#changelist-filter {
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-md) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 0 !important;
+}
+
+#changelist-filter h2 {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+    color: white !important;
+    padding: 1rem !important;
+    margin: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+}
+
+#changelist-filter h3 {
+    background: var(--light-bg) !important;
+    color: var(--text-primary) !important;
+    padding: 0.75rem 1rem !important;
+    margin: 0 !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+#changelist-filter ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+#changelist-filter li {
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+#changelist-filter li:last-child {
+    border-bottom: none !important;
+}
+
+#changelist-filter a {
+    display: block !important;
+    padding: 0.75rem 1rem !important;
+    color: var(--text-secondary) !important;
+    text-decoration: none !important;
+    transition: var(--transition) !important;
+    font-size: 0.875rem !important;
+}
+
+#changelist-filter a:hover {
+    background: var(--light-bg) !important;
+    color: var(--primary-color) !important;
+    padding-left: 1.5rem !important;
+}
+
+#changelist-filter .selected a {
+    background: var(--primary-color) !important;
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+/* Search */
+#changelist-search {
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+#changelist-search label {
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+}
+
+#searchbar {
+    width: 100% !important;
+    max-width: 400px !important;
+    padding: 0.75rem 1rem !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--border-radius) !important;
+    font-size: 0.875rem !important;
+    transition: var(--transition) !important;
+    margin-right: 1rem !important;
+}
+
+#searchbar:focus {
+    outline: none !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Action Bar */
+.actions {
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+}
+
+.actions select {
+    padding: 0.5rem !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--border-radius) !important;
+    background: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    font-size: 0.875rem !important;
+}
+
+.actions button {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #d97706 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: var(--border-radius) !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: var(--transition) !important;
+    font-size: 0.875rem !important;
+}
+
+.actions button:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Form Styles */
+.form-row {
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.form-row label {
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+    font-size: 0.875rem !important;
+}
+
+.form-row .help {
+    font-size: 0.75rem !important;
+    color: var(--text-secondary) !important;
+    margin-top: 0.25rem !important;
+    font-style: italic !important;
+}
+
+/* Fieldsets */
+.module {
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-md) !important;
+    border: 1px solid var(--border-color) !important;
+    margin-bottom: 2rem !important;
+    overflow: hidden !important;
+}
+
+.module h2 {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+    color: white !important;
+    padding: 1rem 1.5rem !important;
+    margin: 0 !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.module h2:before {
+    content: '\f0c9' !important;
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900 !important;
+}
+
+/* Inline Forms */
+.inline-group {
+    background: var(--light-bg) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.inline-group .tabular {
+    border-radius: var(--border-radius) !important;
+    overflow: hidden !important;
+}
+
+.inline-group .tabular thead th {
+    background: var(--primary-color) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 0.75rem !important;
+    font-size: 0.875rem !important;
+}
+
+.inline-group .tabular tbody td {
+    padding: 0.75rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    background: var(--card-bg) !important;
+}
+
+/* Error Styles */
+.errorlist {
+    background: #fef2f2 !important;
+    border: 1px solid #fecaca !important;
+    border-radius: var(--border-radius) !important;
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+    color: #991b1b !important;
+    font-size: 0.875rem !important;
+}
+
+.errorlist li {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.errorlist li:before {
+    content: '\f071' !important;
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900 !important;
+    margin-right: 0.5rem !important;
+}
+
+/* Success Messages */
+.success {
+    background: #ecfdf5 !important;
+    border: 1px solid #a7f3d0 !important;
+    border-radius: var(--border-radius) !important;
+    padding: 1rem !important;
+    color: #065f46 !important;
+    font-weight: 500 !important;
+}
+
+/* Delete Confirmation */
+.delete-confirmation {
+    background: var(--card-bg) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-lg) !important;
+    padding: 2rem !important;
+    max-width: 600px !important;
+    margin: 2rem auto !important;
+}
+
+.delete-confirmation h1 {
+    color: var(--danger-color) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+}
+
+.delete-confirmation h1:before {
+    content: '\f071' !important;
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900 !important;
+}
+
+/* Object Tools */
+.object-tools {
+    display: flex !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.object-tools li {
+    list-style: none !important;
+}
+
+.object-tools a {
+    background: linear-gradient(135deg, var(--success-color) 0%, #059669 100%) !important;
+    color: white !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: var(--border-radius) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: var(--transition) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    font-size: 0.875rem !important;
+}
+
+.object-tools a:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.object-tools a:before {
+    content: '\f067' !important;
+    font-family: 'Font Awesome 6 Free' !important;
+    font-weight: 900 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #changelist-filter {
+        position: static !important;
+        width: 100% !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .results {
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .paginator {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .object-tools {
+        flex-direction: column !important;
+    }
+    
+    #changelist-search {
+        text-align: center !important;
+    }
+    
+    #searchbar {
+        max-width: 100% !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* Loading Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    position: relative;
+}
+
+.loading:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white !important;
+    }
+    
+    .module, .results table {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .object-tools, .actions, #changelist-filter {
+        display: none !important;
+    }
+}

@@ -1,0 +1,628 @@
+/* Dropdown Navigation Fixes */
+.navbar .dropdown-menu {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    min-width: 200px;
+}
+
+.navbar .dropdown-toggle::after {
+    margin-left: 0.5rem;
+}
+
+.navbar .dropdown-item {
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: var(--bs-primary);
+    color: white;
+}
+
+.navbar .dropdown-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Avatar circle styling */
+.avatar-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.avatar-circle:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Enhanced Job Card Styles */
+.job-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-sm);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition);
+    overflow: hidden;
+    position: relative;
+}
+
+.job-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-primary);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover::before {
+    transform: scaleY(1);
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-xl);
+    border-color: var(--primary-color);
+}
+
+.job-card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--gray-100);
+    background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+}
+
+.job-card-body {
+    padding: 1.5rem;
+}
+
+.job-card-footer {
+    padding: 1rem 1.5rem;
+    background: var(--gray-50);
+    border-top: 1px solid var(--gray-100);
+}
+
+.company-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--border-radius);
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    box-shadow: var(--box-shadow-md);
+    margin-right: 1rem;
+}
+
+.job-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.company-name {
+    color: var(--gray-600);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.job-location {
+    color: var(--gray-500);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.job-location i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+.job-description {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.job-tag {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.job-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.job-salary {
+    background: var(--gradient-success);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    box-shadow: var(--box-shadow-sm);
+}
+
+.job-type-badge {
+    background: var(--gradient-info);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.job-remote-badge {
+    background: var(--gradient-warning);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.job-featured-ribbon {
+    position: absolute;
+    top: 1rem;
+    right: -0.5rem;
+    background: var(--gradient-danger);
+    color: white;
+    padding: 0.25rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transform: rotate(3deg);
+    box-shadow: var(--box-shadow-md);
+}
+
+.job-stats {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gray-500);
+    font-size: 0.875rem;
+}
+
+.job-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.job-stat i {
+    color: var(--primary-color);
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-md);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition);
+    overflow: hidden;
+    position: relative;
+}
+
+.dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--box-shadow-xl);
+}
+
+.dashboard-card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--border-radius);
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--box-shadow-md);
+}
+
+.dashboard-card-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-card-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-card-change {
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.dashboard-card-change.positive {
+    color: var(--success-color);
+}
+
+.dashboard-card-change.negative {
+    color: var(--danger-color);
+}
+
+/* Profile Cards */
+.profile-card {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-md);
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.profile-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-lg);
+}
+
+.profile-header {
+    background: var(--gradient-primary);
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.profile-header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: white;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--box-shadow-lg);
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.profile-title {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+.profile-body {
+    padding: 2rem;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-stat {
+    text-align: center;
+    padding: 1rem;
+    background: var(--gray-50);
+    border-radius: var(--border-radius);
+    transition: var(--transition-fast);
+}
+
+.profile-stat:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.profile-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.profile-stat-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* Loading Animations */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(102, 126, 234, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-dots {
+    display: inline-block;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+/* Notification Styles */
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--gradient-danger);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: var(--box-shadow-md);
+    animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.125rem;
+    }
+    
+    .job-card {
+        margin-bottom: 1rem;
+    }
+    
+    .dashboard-card-value {
+        font-size: 1.5rem;
+    }
+    
+    .profile-header {
+        padding: 1.5rem;
+    }
+    
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+    
+    .profile-name {
+        font-size: 1.25rem;
+    }
+    
+    .profile-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 4rem 0;
+        min-height: 70vh;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .search-section {
+        margin-top: -2rem;
+    }
+    
+    .job-tags {
+        gap: 0.25rem;
+    }
+    
+    .job-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+    }
+    
+    .dashboard-card-value {
+        font-size: 1.25rem;
+    }
+}
+
+/* Simple Enhanced Dashboard Dropdown Styles */
+
+/* Enhanced Avatar Circle */
+.avatar-circle {
+    width: 35px !important;
+    height: 35px !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    font-size: 14px !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.avatar-circle:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Enhanced Dropdown Menu */
+.dropdown-menu {
+    border: none !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+    animation: dropdownFadeIn 0.2s ease-out !important;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Dropdown Header */
+.dropdown-header {
+    padding: 1rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.dropdown-header h6 {
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+}
+
+/* Enhanced Dropdown Items */
+.dropdown-item {
+    padding: 0.75rem 1rem !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(59, 130, 246, 0.08) !important;
+    color: #1f2937 !important;
+}
+
+.dropdown-item:active {
+    background-color: rgba(59, 130, 246, 0.12) !important;
+}
+
+/* Icon Styling in Dropdown */
+.dropdown-item i {
+    width: 20px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+}
+
+/* Text Purple for Post Job */
+.text-purple {
+    color: #8b5cf6 !important;
+}
+
+/* Enhanced Badge Styling */
+.badge {
+    font-size: 0.7rem !important;
+    font-weight: 500 !important;
+    padding: 0.25rem 0.5rem !important;
+}
+
+/* Logout Item Special Styling */
+.dropdown-item.text-danger:hover {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: #dc2626 !important;
+}
+
+/* Responsive Design for Dropdown */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        min-width: 250px !important;
+    }
+    
+    .dropdown-header {
+        padding: 0.75rem !important;
+    }
+    
+    .dropdown-item {
+        padding: 0.6rem 0.75rem !important;
+    }
+    
+    .avatar-circle {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 13px !important;
+    }
+}
