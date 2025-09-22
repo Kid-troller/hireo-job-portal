@@ -1,0 +1,453 @@
+<!-- AI Recommendations Component -->
+<div class="ai-recommendations-widget" id="ai-recommendations-widget">
+    <div class="ai-widget-header">
+        <h6 class="ai-widget-title">
+            <i class="fas fa-lightbulb me-2"></i>
+            Smart Recommendations
+        </h6>
+        <div class="ai-widget-controls">
+            <button class="ai-refresh-btn" id="ai-refresh-recommendations" title="Refresh">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+            <button class="ai-settings-btn" id="ai-recommendations-settings" title="Settings">
+                <i class="fas fa-cog"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="ai-widget-content" id="ai-recommendations-content">
+        <div class="ai-loading-recommendations" id="ai-loading-recommendations">
+            <div class="ai-spinner"></div>
+            <span>Loading personalized recommendations...</span>
+        </div>
+        
+        <div class="ai-recommendations-list" id="ai-recommendations-list">
+            <!-- Recommendations will be loaded here -->
+        </div>
+        
+        <div class="ai-no-recommendations" id="ai-no-recommendations" style="display: none;">
+            <i class="fas fa-info-circle text-muted mb-2"></i>
+            <p class="text-muted mb-0">No recommendations available at the moment.</p>
+            <small class="text-muted">Check back later for personalized suggestions.</small>
+        </div>
+    </div>
+    
+    <div class="ai-widget-footer">
+        <button class="ai-view-all-btn" id="ai-view-all-recommendations">
+            View All Recommendations
+            <i class="fas fa-arrow-right ms-1"></i>
+        </button>
+    </div>
+</div>
+
+<style>
+.ai-recommendations-widget {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.ai-widget-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.ai-widget-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #495057;
+    display: flex;
+    align-items: center;
+}
+
+.ai-widget-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.ai-refresh-btn, .ai-settings-btn {
+    background: none;
+    border: none;
+    color: #6c757d;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ai-refresh-btn:hover, .ai-settings-btn:hover {
+    background: rgba(108, 117, 125, 0.1);
+    color: #495057;
+}
+
+.ai-widget-content {
+    padding: 20px;
+    min-height: 200px;
+}
+
+.ai-loading-recommendations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #6c757d;
+}
+
+.ai-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #e9ecef;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: aiSpin 1s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes aiSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ai-recommendations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ai-recommendation-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    border-left: 4px solid #667eea;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.ai-recommendation-item:hover {
+    background: #e9ecef;
+    transform: translateX(4px);
+}
+
+.ai-recommendation-header {
+    display: flex;
+    justify-content: between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.ai-recommendation-title {
+    font-weight: 600;
+    color: #495057;
+    margin: 0;
+    font-size: 14px;
+    flex: 1;
+}
+
+.ai-confidence-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 12px;
+}
+
+.ai-recommendation-description {
+    color: #6c757d;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.ai-recommendation-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.ai-rec-action-btn {
+    background: none;
+    border: 1px solid #dee2e6;
+    color: #6c757d;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ai-rec-action-btn:hover {
+    background: #667eea;
+    border-color: #667eea;
+    color: white;
+}
+
+.ai-rec-action-btn.primary {
+    background: #667eea;
+    border-color: #667eea;
+    color: white;
+}
+
+.ai-rec-action-btn.primary:hover {
+    background: #5a6fd8;
+    border-color: #5a6fd8;
+}
+
+.ai-no-recommendations {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.ai-widget-footer {
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.ai-view-all-btn {
+    background: none;
+    border: none;
+    color: #667eea;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.ai-view-all-btn:hover {
+    background: rgba(102, 126, 234, 0.1);
+    color: #5a6fd8;
+}
+
+/* Recommendation Types */
+.ai-recommendation-item.job {
+    border-left-color: #28a745;
+}
+
+.ai-recommendation-item.learning {
+    border-left-color: #ffc107;
+}
+
+.ai-recommendation-item.skill {
+    border-left-color: #17a2b8;
+}
+
+.ai-recommendation-item.connection {
+    border-left-color: #6f42c1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .ai-widget-content {
+        padding: 16px;
+    }
+    
+    .ai-recommendation-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .ai-confidence-badge {
+        align-self: flex-start;
+        margin-left: 0;
+    }
+}
+</style>
+
+<script>
+class AIRecommendations {
+    constructor() {
+        this.context = '{{ ai_page_context }}';
+        this.isLoading = false;
+        this.init();
+    }
+
+    init() {
+        this.bindEvents();
+        this.loadRecommendations();
+    }
+
+    bindEvents() {
+        // Refresh recommendations
+        document.getElementById('ai-refresh-recommendations').addEventListener('click', () => {
+            this.loadRecommendations();
+        });
+
+        // View all recommendations
+        document.getElementById('ai-view-all-recommendations').addEventListener('click', () => {
+            window.location.href = '/ai-assistant/';
+        });
+
+        // Settings (placeholder)
+        document.getElementById('ai-recommendations-settings').addEventListener('click', () => {
+            this.showSettings();
+        });
+    }
+
+    async loadRecommendations() {
+        if (this.isLoading) return;
+        
+        this.isLoading = true;
+        this.showLoading(true);
+
+        try {
+            const response = await fetch(`/ai-assistant/api/recommendations/?context=${this.context}&limit=3`);
+            const data = await response.json();
+
+            if (data.recommendations && data.recommendations.length > 0) {
+                this.displayRecommendations(data.recommendations);
+            } else {
+                this.showNoRecommendations();
+            }
+        } catch (error) {
+            console.error('Error loading recommendations:', error);
+            this.showError();
+        } finally {
+            this.isLoading = false;
+            this.showLoading(false);
+        }
+    }
+
+    displayRecommendations(recommendations) {
+        const container = document.getElementById('ai-recommendations-list');
+        container.innerHTML = '';
+
+        recommendations.forEach(rec => {
+            const item = this.createRecommendationItem(rec);
+            container.appendChild(item);
+        });
+
+        document.getElementById('ai-recommendations-list').style.display = 'flex';
+        document.getElementById('ai-no-recommendations').style.display = 'none';
+    }
+
+    createRecommendationItem(rec) {
+        const item = document.createElement('div');
+        item.className = `ai-recommendation-item ${rec.type || 'general'}`;
+        
+        const confidencePercent = Math.round((rec.confidence || 0.5) * 100);
+        
+        item.innerHTML = `
+            <div class="ai-recommendation-header">
+                <h6 class="ai-recommendation-title">${rec.title}</h6>
+                <span class="ai-confidence-badge">${confidencePercent}% match</span>
+            </div>
+            <p class="ai-recommendation-description">${rec.description}</p>
+            <div class="ai-recommendation-actions">
+                ${rec.url ? `<button class="ai-rec-action-btn primary" onclick="window.location.href='${rec.url}'">View</button>` : ''}
+                <button class="ai-rec-action-btn" onclick="aiRecommendations.dismissRecommendation('${rec.id || ''}')">Dismiss</button>
+            </div>
+        `;
+
+        // Add click handler for the entire item
+        if (rec.url) {
+            item.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('ai-rec-action-btn')) {
+                    window.location.href = rec.url;
+                }
+            });
+        }
+
+        return item;
+    }
+
+    showLoading(show) {
+        document.getElementById('ai-loading-recommendations').style.display = show ? 'flex' : 'none';
+        
+        // Animate refresh button
+        const refreshBtn = document.getElementById('ai-refresh-recommendations');
+        if (show) {
+            refreshBtn.querySelector('i').style.animation = 'aiSpin 1s linear infinite';
+        } else {
+            refreshBtn.querySelector('i').style.animation = '';
+        }
+    }
+
+    showNoRecommendations() {
+        document.getElementById('ai-recommendations-list').style.display = 'none';
+        document.getElementById('ai-no-recommendations').style.display = 'block';
+    }
+
+    showError() {
+        const container = document.getElementById('ai-recommendations-list');
+        container.innerHTML = `
+            <div class="ai-recommendation-item" style="border-left-color: #dc3545;">
+                <div class="ai-recommendation-header">
+                    <h6 class="ai-recommendation-title">
+                        <i class="fas fa-exclamation-triangle text-danger me-2"></i>
+                        Unable to load recommendations
+                    </h6>
+                </div>
+                <p class="ai-recommendation-description">
+                    There was an error loading your personalized recommendations. Please try again later.
+                </p>
+                <div class="ai-recommendation-actions">
+                    <button class="ai-rec-action-btn primary" onclick="aiRecommendations.loadRecommendations()">
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        `;
+        document.getElementById('ai-recommendations-list').style.display = 'flex';
+        document.getElementById('ai-no-recommendations').style.display = 'none';
+    }
+
+    async dismissRecommendation(recId) {
+        if (!recId) return;
+
+        try {
+            await fetch('/ai-assistant/api/feedback/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': this.getCSRFToken()
+                },
+                body: JSON.stringify({
+                    recommendation_id: recId,
+                    action: 'dismiss'
+                })
+            });
+
+            // Reload recommendations
+            this.loadRecommendations();
+        } catch (error) {
+            console.error('Error dismissing recommendation:', error);
+        }
+    }
+
+    showSettings() {
+        // Placeholder for settings modal
+        alert('AI Recommendation settings coming soon!');
+    }
+
+    getCSRFToken() {
+        return document.querySelector('[name=csrfmiddlewaretoken]')?.value || 
+               document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
+    }
+}
+
+// Initialize AI Recommendations when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('ai-recommendations-widget')) {
+        window.aiRecommendations = new AIRecommendations();
+    }
+});
+</script>
